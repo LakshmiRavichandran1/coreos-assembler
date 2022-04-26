@@ -752,7 +752,7 @@ prepare_git_artifacts() {
         is_dirty="true"
     fi
 
-    tar -C "${gitd}" -czf "${tarball}" --exclude-vcs .
+    tar --exclude-vcs -C "${gitd}" -czf "${tarball}"
     chmod 0444 "${tarball}"
 
     local rev
